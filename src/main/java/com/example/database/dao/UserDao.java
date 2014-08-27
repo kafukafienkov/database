@@ -54,7 +54,7 @@ public class UserDao {
             Connection connection = DriverManager.getConnection(
                     Const.DB_URL, Const.DB_USER, Const.DB_PASSWORD);
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT nextval(user_info_id_seq)");
+            ResultSet resultSet = statement.executeQuery("SELECT nextval('user_info_id_seq)");
             resultSet.next();
             int id = resultSet.getInt(1);
 

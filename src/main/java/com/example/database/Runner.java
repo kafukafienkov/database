@@ -1,10 +1,9 @@
 package com.example.database;
 
-import com.example.database.dao.UserDao;
-import com.example.database.model.User;
+import com.example.database.ui.MainFrame;
 
-import java.util.Date;
-import java.util.List;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * author: Bartek
@@ -12,27 +11,16 @@ import java.util.List;
 public class Runner {
 
     public static void main(String[] args) {
-        saveUser();
-        findAllUsers();
-    }
 
-    private static void saveUser() {
-        UserDao userDao = new UserDao();
-        User user = new User();
-        user.setName("Jan");
-        user.setSurname("Nowak");
-        user.setBirthdate(new Date());
-        user.setSalary(15000);
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                MainFrame frame = new MainFrame();
+                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+            }
+        });
 
-        userDao.saveUser(user);
-    }
-
-    private static void findAllUsers() {
-        UserDao userDao = new UserDao();
-        List<User> users = userDao.findAll();
-
-        for (User user : users) {
-            System.out.println(user);
-        }
     }
 }
+
