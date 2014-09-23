@@ -1,4 +1,6 @@
-package com.example.database.ui;
+package com.example.database.ui.main;
+
+import com.example.database.dao.TextsDao;
 
 import javax.swing.*;
 
@@ -13,10 +15,11 @@ public class MainFrame extends JFrame {
     }
 
     private void frameSetup() {
-        setTitle("Tabela użytkowników");
+        setTitle(TextsDao.getText("main.title"));
         setSize(700, 400);
         setLocationRelativeTo(null);
         setResizable(false);
+
     }
 
     private void initComponents() {

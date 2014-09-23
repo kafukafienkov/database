@@ -1,7 +1,6 @@
 package com.example.database.dao;
 
 import com.example.database.model.User;
-import com.example.database.util.Const;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,9 +16,11 @@ public class UserDao {
         List<User> users = new ArrayList<User>();
 
         try {
-            Class.forName(Const.DB_DRIVER);
+            Class.forName(TextsDao.getText("db.driver"));
             Connection connection = DriverManager.getConnection(
-                    Const.DB_URL, Const.DB_USER, Const.DB_PASSWORD);
+                    TextsDao.getText("db.url"),
+                    TextsDao.getText("db.user"),
+                    TextsDao.getText("db.password"));
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM user_info");
 
@@ -50,11 +51,13 @@ public class UserDao {
 
     public void saveUser(User user) {
         try {
-            Class.forName(Const.DB_DRIVER);
+            Class.forName(TextsDao.getText("db.driver"));
             Connection connection = DriverManager.getConnection(
-                    Const.DB_URL, Const.DB_USER, Const.DB_PASSWORD);
+                    TextsDao.getText("db.url"),
+                    TextsDao.getText("db.user"),
+                    TextsDao.getText("db.password"));
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT nextval('user_info_id_seq)");
+            ResultSet resultSet = statement.executeQuery("SELECT nextval('user_info_id_seq')");
             resultSet.next();
             int id = resultSet.getInt(1);
 
