@@ -9,6 +9,7 @@ import java.awt.*;
 public class TablePanel extends JPanel {
 
     public TablePanel() {
+
         setBackground(Color.blue);
     }
 }

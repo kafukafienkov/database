@@ -7,7 +7,12 @@ import java.awt.*;
  * author: Bartek
  */
 public class ButtonsPanel extends JPanel {
+
     public ButtonsPanel() {
+
         setBackground(Color.GREEN);
+
     }
+
+
 }
