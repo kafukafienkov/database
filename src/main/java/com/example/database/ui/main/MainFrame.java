@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
 
     private void frameSetup() {
         setTitle(TextsDao.getText("main.title"));
-        setSize(700, 400);
+        setSize(500, 300);
         setLocationRelativeTo(null);
         setResizable(false);
 

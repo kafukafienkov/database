@@ -11,6 +11,7 @@ import java.awt.*;
 public class Runner {
 
     public static void main(String[] args) {
+        changeLookAndFeel();
 
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -21,6 +22,14 @@ public class Runner {
             }
         });
 
+    }
+
+    private static void changeLookAndFeel() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

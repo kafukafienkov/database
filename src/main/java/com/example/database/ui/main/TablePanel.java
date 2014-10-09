@@ -1,5 +1,7 @@
 package com.example.database.ui.main;
 
+import com.example.database.model.UserTableModel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,7 +11,13 @@ import java.awt.*;
 public class TablePanel extends JPanel {
 
     public TablePanel() {
+        initComponents();
+    }
 
-        setBackground(Color.blue);
+    private void initComponents() {
+        UserTableModel model = new UserTableModel();
+        JTable usersTable = new JTable(model);
+        JScrollPane scrollPane = new JScrollPane(usersTable);
+        add(scrollPane);
     }
 }

@@ -2,35 +2,27 @@ package com.example.database.ui.main;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * author: Bartek
  */
-public class MainPanel extends JPanel implements ActionListener {
+public class MainPanel extends JPanel {
 
     public MainPanel() {
 
+        setPanelUp();
+        initComponents();
+    }
+
+    private void setPanelUp() {
         setLayout(new BorderLayout());
+    }
+
+    private void initComponents() {
         TablePanel tablePanel = new TablePanel();
         ButtonsPanel buttonsPanel = new ButtonsPanel();
-        Button addButton = new Button();
-        Button deleteButton = new Button();
-
-        buttonsPanel.add(addButton);
-        buttonsPanel.add(deleteButton);
-
-        addButton.addActionListener(this);
-        deleteButton.addActionListener(this);
 
         add(tablePanel, BorderLayout.CENTER);
         add(buttonsPanel, BorderLayout.SOUTH);
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 }

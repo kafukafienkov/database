@@ -30,7 +30,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>Runner</mainClass>
+                            <mainClass>com.example.database.Runner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
