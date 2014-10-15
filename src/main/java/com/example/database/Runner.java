@@ -1,6 +1,6 @@
 package com.example.database;
 
-import com.example.database.ui.main.MainFrame;
+import com.example.database.ui.main.view.MainFrame;
 
 import javax.swing.*;
 import java.awt.*;

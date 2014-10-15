@@ -1,9 +1,8 @@
-package com.example.database.ui.main;
+package com.example.database.ui.main.view;
 
-import com.example.database.model.UserTableModel;
+import com.example.database.ui.main.model.UserTableModel;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * author: Bartek

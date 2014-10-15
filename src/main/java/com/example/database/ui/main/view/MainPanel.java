@@ -1,12 +1,17 @@
-package com.example.database.ui.main;
+package com.example.database.ui.main.view;
 
 import javax.swing.*;
+import javax.swing.text.TabableView;
 import java.awt.*;
 
 /**
  * author: Bartek
  */
 public class MainPanel extends JPanel {
+
+    private TablePanel tablePanel;
+
+    private ButtonsPanel buttonsPanel;
 
     public MainPanel() {
 
@@ -19,10 +24,18 @@ public class MainPanel extends JPanel {
     }
 
     private void initComponents() {
-        TablePanel tablePanel = new TablePanel();
-        ButtonsPanel buttonsPanel = new ButtonsPanel();
+        tablePanel = new TablePanel();
+        buttonsPanel = new ButtonsPanel();
 
         add(tablePanel, BorderLayout.CENTER);
         add(buttonsPanel, BorderLayout.SOUTH);
+    }
+
+    public TablePanel getTablePanel() {
+        return tablePanel;
+    }
+
+    public ButtonsPanel getButtonsPanel() {
+        return buttonsPanel;
     }
 }

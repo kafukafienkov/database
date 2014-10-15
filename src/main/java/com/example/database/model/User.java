@@ -7,6 +7,8 @@ import java.util.Date;
  */
 public class User {
 
+    private static int count = 1;
+
     private int id;
 
     private String name;
@@ -16,6 +18,11 @@ public class User {
     private Date birthdate;
 
     private double salary;
+
+    public User () {
+        id = count;
+        count++;
+    }
 
     public int getId() {
         return id;

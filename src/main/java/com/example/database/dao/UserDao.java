@@ -49,7 +49,7 @@ public class UserDao {
         return users;
     }
 
-    public void saveUser(User user) {
+     public static void saveUser(User user) {
         try {
             Class.forName(TextsDao.getText("db.driver"));
             Connection connection = DriverManager.getConnection(
