@@ -1,5 +1,8 @@
 package com.example.database.ui.main.controller;
 
+import com.example.database.dao.TextsDao;
+import com.example.database.ui.main.model.UserTableModel;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,17 +12,25 @@ import java.awt.event.ActionListener;
  */
 public class UserController {
 
+    private JTable usersTable;
+
     private class AddButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Kliknięto przycisk Dodaj");
+            //TODO nowe okno z formularzem dla nowego usera
         }
     }
 
     private class DeleteButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Kliknięto przycisk Usuń");
+            int selectedRow = usersTable.getSelectedRow();
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(null, TextsDao.getText("userController.noRowSelected"));
+            } else {
+                UserTableModel tableModel = (UserTableModel) usersTable.getModel();
+                tableModel.deleteRow(selectedRow);
+            }
         }
     }
 
@@ -29,5 +40,9 @@ public class UserController {
 
     public void addListenerToDeleteBtn(JButton deleteBtn) {
         deleteBtn.addActionListener(new DeleteButtonListener());
+    }
+
+    public void setUsersTable(JTable usersTable) {
+        this.usersTable = usersTable;
     }
 }

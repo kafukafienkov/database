@@ -9,14 +9,20 @@ import javax.swing.*;
  */
 public class TablePanel extends JPanel {
 
+    private JTable usersTable;
+
     public TablePanel() {
         initComponents();
     }
 
     private void initComponents() {
         UserTableModel model = new UserTableModel();
-        JTable usersTable = new JTable(model);
+        usersTable = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(usersTable);
         add(scrollPane);
+    }
+
+    public JTable getUsersTable() {
+        return usersTable;
     }
 }

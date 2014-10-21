@@ -1,5 +1,6 @@
 package com.example.database.ui.main.model;
 
+import com.example.database.dao.TextsDao;
 import com.example.database.model.User;
 
 import javax.swing.table.AbstractTableModel;
@@ -11,17 +12,23 @@ import java.util.List;
  */
 public class UserTableModel extends AbstractTableModel {
 
-    private String[] columns = {"ID", "Imię", "Nazwisko", "Data urodzenia", "Pensja"};
-
     private List<User> users = new LinkedList<>();
+
+    {
+        User user1 = new User();
+        user1.setName("Marek");
+        user1.setSurname("Nowak");
+        users.add(user1);
+
+    }
 
     public void addUser(User user) {
         users.add(user);
         fireTableDataChanged(); //przerysowanie tabeli od nowa
     }
 
-    public void deleteUser(User user) {
-        users.remove(user);
+    public void deleteRow(int userID) {
+        users.remove(userID);
         fireTableDataChanged();
     }
 
@@ -32,7 +39,8 @@ public class UserTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return columns.length;
+        String[] columnsTitles = getColumnsTitles();
+        return columnsTitles.length;
     }
 
     @Override
@@ -58,6 +66,17 @@ public class UserTableModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int column) {
-        return columns[column];
+        String[] columnsTitles = getColumnsTitles();
+        return columnsTitles[column];
+    }
+
+    public String[] getColumnsTitles() {
+        return new String[]{
+                TextsDao.getText("column.ID"),
+                TextsDao.getText("column.Name"),
+                TextsDao.getText("column.Surname"),
+                TextsDao.getText("column.Age"),
+                TextsDao.getText("column.Salary")
+        };
     }
 }

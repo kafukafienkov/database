@@ -1,5 +1,6 @@
 package com.example.database.dao;
 
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -8,7 +9,8 @@ import java.util.ResourceBundle;
 public class TextsDao {
 
     public static String getText(String key) {
-        ResourceBundle bundle = ResourceBundle.getBundle("texts");
+        Locale locale = Locale.getDefault();
+        ResourceBundle bundle = ResourceBundle.getBundle("texts", locale);
         return bundle.getString(key);
     }
 }

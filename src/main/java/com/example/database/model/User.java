@@ -19,7 +19,7 @@ public class User {
 
     private double salary;
 
-    public User () {
+    public User() {
         id = count;
         count++;
     }

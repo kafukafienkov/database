@@ -28,6 +28,7 @@ public class MainFrame extends JFrame {
         UserController userController = new UserController();
         userController.addListenerToAddBtn(mainPanel.getButtonsPanel().getAddButton());
         userController.addListenerToDeleteBtn(mainPanel.getButtonsPanel().getDeleteButton());
+        userController.setUsersTable(mainPanel.getTablePanel().getUsersTable());
     }
 }
 

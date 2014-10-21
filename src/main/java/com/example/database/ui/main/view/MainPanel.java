@@ -1,7 +1,6 @@
 package com.example.database.ui.main.view;
 
 import javax.swing.*;
-import javax.swing.text.TabableView;
 import java.awt.*;
 
 /**
