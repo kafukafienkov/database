@@ -3,7 +3,6 @@ package com.example.database.ui.main.controller;
 import com.example.database.dao.TextsDao;
 import com.example.database.ui.main.model.UserTableModel;
 import com.example.database.ui.main.view.addForm.MainFrame;
-import com.example.database.ui.main.view.addForm.MainPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
