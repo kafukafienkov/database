@@ -2,6 +2,7 @@ package com.example.database.ui.main.controller;
 
 import com.example.database.dao.TextsDao;
 import com.example.database.ui.main.model.UserTableModel;
+import com.example.database.ui.main.view.addForm.MainPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,6 +19,7 @@ public class UserController {
         @Override
         public void actionPerformed(ActionEvent e) {
             //TODO nowe okno z formularzem dla nowego usera
+            MainPanel addUserForm = new MainPanel();
         }
     }
 
