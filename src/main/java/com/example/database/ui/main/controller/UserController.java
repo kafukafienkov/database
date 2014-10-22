@@ -15,6 +15,18 @@ public class UserController {
 
     private JTable usersTable;
 
+    public void addListenerToAddBtn(JButton addBtn) {
+        addBtn.addActionListener(new AddButtonListener());
+    }
+
+    public void addListenerToDeleteBtn(JButton deleteBtn) {
+        deleteBtn.addActionListener(new DeleteButtonListener());
+    }
+
+    public void setUsersTable(JTable usersTable) {
+        this.usersTable = usersTable;
+    }
+
     private class AddButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -36,17 +48,5 @@ public class UserController {
                 tableModel.deleteRow(selectedRow);
             }
         }
-    }
-
-    public void addListenerToAddBtn(JButton addBtn) {
-        addBtn.addActionListener(new AddButtonListener());
-    }
-
-    public void addListenerToDeleteBtn(JButton deleteBtn) {
-        deleteBtn.addActionListener(new DeleteButtonListener());
-    }
-
-    public void setUsersTable(JTable usersTable) {
-        this.usersTable = usersTable;
     }
 }

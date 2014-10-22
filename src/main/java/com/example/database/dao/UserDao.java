@@ -12,6 +12,35 @@ import java.util.List;
  */
 public class UserDao {
 
+    public static void saveUser(User user) {
+        try {
+            Class.forName(TextsDao.getText("db.driver"));
+            Connection connection = DriverManager.getConnection(
+                    TextsDao.getText("db.url"),
+                    TextsDao.getText("db.user"),
+                    TextsDao.getText("db.password"));
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT nextval('user_info_id_seq')");
+            resultSet.next();
+            int id = resultSet.getInt(1);
+
+            String query = "INSERT INTO user_info VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement prepStat = connection.prepareStatement(query);
+            prepStat.setLong(1, id);
+            prepStat.setString(2, user.getName());
+            prepStat.setString(3, user.getSurname());
+            java.util.Date birthdate = user.getBirthdate();
+            prepStat.setDate(4, new java.sql.Date(birthdate.getTime()));
+            prepStat.setDouble(5, user.getSalary());
+            prepStat.execute();
+            prepStat.close();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public List<User> findAll() {
         List<User> users = new ArrayList<User>();
 
@@ -47,34 +76,5 @@ public class UserDao {
         }
 
         return users;
-    }
-
-    public static void saveUser(User user) {
-        try {
-            Class.forName(TextsDao.getText("db.driver"));
-            Connection connection = DriverManager.getConnection(
-                    TextsDao.getText("db.url"),
-                    TextsDao.getText("db.user"),
-                    TextsDao.getText("db.password"));
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT nextval('user_info_id_seq')");
-            resultSet.next();
-            int id = resultSet.getInt(1);
-
-            String query = "INSERT INTO user_info VALUES (?, ?, ?, ?, ?)";
-            PreparedStatement prepStat = connection.prepareStatement(query);
-            prepStat.setLong(1, id);
-            prepStat.setString(2, user.getName());
-            prepStat.setString(3, user.getSurname());
-            java.util.Date birthdate = user.getBirthdate();
-            prepStat.setDate(4, new java.sql.Date(birthdate.getTime()));
-            prepStat.setDouble(5, user.getSalary());
-            prepStat.execute();
-            prepStat.close();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }
