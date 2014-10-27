@@ -2,7 +2,7 @@ package com.example.database.ui.main.controller;
 
 import com.example.database.dao.TextsDao;
 import com.example.database.ui.main.model.UserTableModel;
-import com.example.database.ui.main.view.addForm.MainFrame;
+import com.example.database.ui.main.view.AddUserForm;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -31,9 +31,9 @@ public class UserController {
         @Override
         public void actionPerformed(ActionEvent e) {
             //TODO nowe okno z formularzem dla nowego usera
-            MainFrame frame = new MainFrame();
-            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            frame.setVisible(true);
+            AddUserForm addUserForm = new AddUserForm();
+
+
         }
     }
 
