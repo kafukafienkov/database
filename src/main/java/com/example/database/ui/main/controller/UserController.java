@@ -32,7 +32,9 @@ public class UserController {
         public void actionPerformed(ActionEvent e) {
             //TODO nowe okno z formularzem dla nowego usera
             AddUserForm addUserForm = new AddUserForm();
-
+            addUserForm.setLayout(addUserForm.getLayout());
+            addUserForm.setVisible(true);
+            addUserForm.AddUserForm();
 
         }
     }

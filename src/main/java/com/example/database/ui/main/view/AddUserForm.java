@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * author: Bartek
  */
-public class AddUserForm {
+public class AddUserForm extends JFrame{
 
     JFrame frame;
 
@@ -24,16 +24,16 @@ public class AddUserForm {
 
     FlowLayout flowLayout;
 
-    public AddUserForm() {
+    public void AddUserForm() {
 
         //TODO czy można utworzyć metodę korzystającą z TextsDao.getText
 
         frame = new JFrame(TextsDao.getText("addForm.mainTitle"));
 
-        nameLbl = new JLabel(TextsDao.getText("column.Name" + " :"));
-        surnameLbl = new JLabel(TextsDao.getText("column.Surname" + " :"));
-        ageLbl = new JLabel(TextsDao.getText("column.Age" + " :"));
-        salaryLbl = new JLabel(TextsDao.getText("column.Salary" + " :"));
+        nameLbl = new JLabel(TextsDao.getText("column.Name"));
+        surnameLbl = new JLabel(TextsDao.getText("column.Surname"));
+        ageLbl = new JLabel(TextsDao.getText("column.Age"));
+        salaryLbl = new JLabel(TextsDao.getText("column.Salary"));
 
         nameTxt = new JTextField(0);
         surnameTxt = new JTextField(0);

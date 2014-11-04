@@ -1,5 +1,6 @@
 package com.example.database;
 
+import com.example.database.ui.main.view.AddUserForm;
 import com.example.database.ui.main.view.MainFrame;
 
 import javax.swing.*;
@@ -21,7 +22,6 @@ public class Runner {
                 frame.setVisible(true);
             }
         });
-
     }
 
     private static void changeLookAndFeel() {
