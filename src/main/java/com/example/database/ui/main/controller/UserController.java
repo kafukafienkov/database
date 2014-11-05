@@ -2,7 +2,7 @@ package com.example.database.ui.main.controller;
 
 import com.example.database.dao.TextsDao;
 import com.example.database.ui.main.model.UserTableModel;
-import com.example.database.ui.main.view.AddUserForm;
+import com.example.database.ui.add_user.view.AddUserFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,12 +30,9 @@ public class UserController {
     private class AddButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //TODO nowe okno z formularzem dla nowego usera
-            AddUserForm addUserForm = new AddUserForm();
-            addUserForm.setLayout(addUserForm.getLayout());
-            addUserForm.setVisible(true);
-            addUserForm.AddUserForm();
-
+            AddUserFrame addUserFrame = new AddUserFrame();
+            addUserFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            addUserFrame.setVisible(true);
         }
     }
 

@@ -1,34 +1,87 @@
-package com.example.database.ui.main.view;
+package com.example.database.ui.add_user.view;
 
 import com.example.database.dao.TextsDao;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * author: Bartek
  */
-public class AddUserForm extends JFrame{
+public class AddUserFrame extends JFrame {
 
-    JFrame frame;
+    public AddUserFrame() {
+        setFrameUp();
+        initComponents();
+    }
 
-    JLabel nameLbl, surnameLbl, ageLbl, salaryLbl;
+    public void initComponents() {
+        AddUserPanel addUserPanel = new AddUserPanel();
+        add(addUserPanel);
+    }
 
-    JTextField nameTxt, surnameTxt, ageTxt, salaryTxt;
+    public void setFrameUp() {
+        setTitle(TextsDao.getText("addForm.mainTitle"));
 
-    JButton okBtn, cancelBtn;
+        setSize(250, 250);
+        setLocationRelativeTo(null);
+    }
 
-    JPanel jPanel, jPanel1;
+}
 
-    GridLayout gl42, gl12;
 
-    FlowLayout flowLayout;
 
-    public void AddUserForm() {
 
-        //TODO czy można utworzyć metodę korzystającą z TextsDao.getText
 
-        frame = new JFrame(TextsDao.getText("addForm.mainTitle"));
+
+
+
+
+
+
+
+
+
+
+
+/*JFrame frame;
+
+        JLabel nameLbl, surnameLbl, ageLbl, salaryLbl;
+
+        JTextField nameTxt, surnameTxt, ageTxt, salaryTxt;
+
+        JButton okBtn, cancelBtn;
+
+        JPanel jPanel, jPanel1;
+
+        GridLayout gl42, gl12;
+
+        FlowLayout flowLayout;*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*  frame = new JFrame(TextsDao.getText("addForm.mainTitle"));
 
         nameLbl = new JLabel(TextsDao.getText("column.Name"));
         surnameLbl = new JLabel(TextsDao.getText("column.Surname"));
@@ -62,6 +115,4 @@ public class AddUserForm extends JFrame{
 
         jPanel1.setLayout(gl12);
         jPanel1.add(okBtn);
-        jPanel1.add(cancelBtn);
-    }
-}
+        jPanel1.add(cancelBtn);*/

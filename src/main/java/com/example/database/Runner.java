@@ -1,6 +1,6 @@
 package com.example.database;
 
-import com.example.database.ui.main.view.AddUserForm;
+import com.example.database.ui.add_user.view.AddUserFrame;
 import com.example.database.ui.main.view.MainFrame;
 
 import javax.swing.*;
@@ -17,9 +17,13 @@ public class Runner {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                MainFrame frame = new MainFrame();
-                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                frame.setVisible(true);
+//                MainFrame frame = new MainFrame();
+//                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+//                frame.setVisible(true);
+                AddUserFrame addUserFrame = new AddUserFrame();
+                addUserFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                addUserFrame.setVisible(true);
+
             }
         });
     }
