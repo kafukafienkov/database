@@ -1,6 +1,7 @@
 package com.example.database.ui.add_user.view;
 
 import com.example.database.dao.TextsDao;
+import com.example.database.ui.add_user.controller.AddUserController;
 
 import javax.swing.*;
 
@@ -14,16 +15,25 @@ public class AddUserFrame extends JFrame {
         initComponents();
     }
 
-    public void initComponents() {
-        AddUserPanel addUserPanel = new AddUserPanel();
-        add(addUserPanel);
-    }
-
     public void setFrameUp() {
         setTitle(TextsDao.getText("addForm.mainTitle"));
 
-        setSize(250, 250);
+        setSize(200, 200);
         setLocationRelativeTo(null);
+    }
+
+    public void initComponents() {
+        AddUserPanel addUserPanel = new AddUserPanel();
+        add(addUserPanel);
+
+        AddUserController addUserController = new AddUserController();
+
+        addUserController.setNameTF(addUserPanel.getNameTF());
+        addUserController.setSurnameTF(addUserPanel.getSurnameTF());
+        addUserController.setBirthdateTF(addUserPanel.getBirthdateTF());
+        addUserController.setSalaryTF(addUserPanel.getSalaryTF());
+        addUserController.setAddButton(addUserPanel.getAddButton());
+        addUserController.setCancelButton(addUserPanel.getCancelButton());
     }
 
 }

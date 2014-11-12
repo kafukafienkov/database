@@ -4,6 +4,7 @@ import com.example.database.dao.TextsDao;
 
 import javax.swing.*;
 
+
 /**
  * author: Bartek
  */

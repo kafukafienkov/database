@@ -10,6 +10,14 @@ import java.awt.*;
  */
 public class AddUserPanel extends JPanel {
 
+    private JTextField nameTF;
+    private JTextField surnameTF;
+    private JTextField birthdateTF;
+    private JTextField salaryTF;
+
+    private JButton addButton;
+    private JButton cancelButton;
+
     public AddUserPanel() {
         setPanelUp();
         initComponents();
@@ -26,10 +34,13 @@ public class AddUserPanel extends JPanel {
         JLabel birthdateLbl = new JLabel(TextsDao.getText("addPanel.dobLbl"));
         JLabel salaryLbl = new JLabel(TextsDao.getText("addPanel.salaryLbl"));
 
-        JTextField nameTF = new JTextField();
-        JTextField surnameTF = new JTextField();
-        JTextField birthdateTF = new JTextField();
-        JTextField salaryTF = new JTextField();
+        nameTF = new JTextField();
+        surnameTF = new JTextField();
+        birthdateTF = new JTextField();
+        salaryTF = new JTextField();
+
+        addButton = new JButton(TextsDao.getText("buttonsPanel.addButton"));
+        cancelButton = new JButton(TextsDao.getText("buttonsPanel.cancelButton"));
 
         add(nameLbl);
         add(nameTF);
@@ -39,5 +50,31 @@ public class AddUserPanel extends JPanel {
         add(birthdateTF);
         add(salaryLbl);
         add(salaryTF);
+        add(addButton);
+        add(cancelButton);
+    }
+
+    public JButton getCancelButton() {
+        return cancelButton;
+    }
+
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JTextField getSalaryTF() {
+        return salaryTF;
+    }
+
+    public JTextField getBirthdateTF() {
+        return birthdateTF;
+    }
+
+    public JTextField getSurnameTF() {
+        return surnameTF;
+    }
+
+    public JTextField getNameTF() {
+        return nameTF;
     }
 }
