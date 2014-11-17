@@ -1,6 +1,7 @@
 package com.example.database.ui.add_user.view;
 
 import com.example.database.dao.TextsDao;
+import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +13,7 @@ public class AddUserPanel extends JPanel {
 
     private JTextField nameTF;
     private JTextField surnameTF;
-    private JTextField birthdateTF;
+    private JDateChooser birthdateDC;
     private JTextField salaryTF;
 
     private JButton addButton;
@@ -36,7 +37,7 @@ public class AddUserPanel extends JPanel {
 
         nameTF = new JTextField();
         surnameTF = new JTextField();
-        birthdateTF = new JTextField();
+        birthdateDC = new JDateChooser();
         salaryTF = new JTextField();
 
         addButton = new JButton(TextsDao.getText("buttonsPanel.addButton"));
@@ -47,7 +48,7 @@ public class AddUserPanel extends JPanel {
         add(surnameLbl);
         add(surnameTF);
         add(birthdateLbl);
-        add(birthdateTF);
+        add(birthdateDC);
         add(salaryLbl);
         add(salaryTF);
         add(addButton);
@@ -66,8 +67,8 @@ public class AddUserPanel extends JPanel {
         return salaryTF;
     }
 
-    public JTextField getBirthdateTF() {
-        return birthdateTF;
+    public JDateChooser getBirthdateDC() {
+        return birthdateDC;
     }
 
     public JTextField getSurnameTF() {
